@@ -1,0 +1,120 @@
+.searchContainer {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.searchBar {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.inputGroup:focus-within {
+  border-color: #0070f3;
+}
+
+.select {
+  border: none;
+  background: transparent;
+  padding: 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border-color);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: var(--foreground);
+}
+
+.searchButton {
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.searchButton:hover {
+  background: #0060df;
+}
+
+.bambooShortcutWrapper {
+  margin-bottom: 0.75rem;
+}
+
+.bambooShortcutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  transition: all 0.2s ease;
+}
+
+.bambooShortcutBtn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .searchContainer {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    gap: 0.35rem;
+  }
+  
+  .select {
+    padding: 0 0.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .input {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .searchButton {
+    padding: 0 0.8rem;
+  }
+
+  .bambooShortcutBtn {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.85rem;
+  }
+}

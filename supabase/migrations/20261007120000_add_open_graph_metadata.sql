@@ -1,0 +1,3 @@
+ALTER TABLE public.posts
+  ADD COLUMN IF NOT EXISTS og_title TEXT,
+  ADD COLUMN IF NOT EXISTS og_description TEXT;

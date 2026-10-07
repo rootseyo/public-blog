@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background gradient representing dawn -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="50%" stop-color="#fecfef"/>
+      <stop offset="100%" stop-color="#a1c4fd"/>
+    </linearGradient>
+    <linearGradient id="bambooGrad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2e7d32"/>
+      <stop offset="50%" stop-color="#4caf50"/>
+      <stop offset="100%" stop-color="#1b5e20"/>
+    </linearGradient>
+    <linearGradient id="bambooGrad2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b5e20"/>
+      <stop offset="50%" stop-color="#2e7d32"/>
+      <stop offset="100%" stop-color="#0d5302"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+  
+  <!-- Sun -->
+  <circle cx="500" cy="350" r="80" fill="#ff7043" opacity="0.9" />
+  
+  <!-- Back hills -->
+  <path d="M0 600 L0 450 Q200 380 400 460 T800 420 L800 600 Z" fill="#81c784" opacity="0.5"/>
+  <path d="M0 600 L0 480 Q300 420 600 500 T800 470 L800 600 Z" fill="#66bb6a" opacity="0.7"/>
+  
+  <!-- Ground -->
+  <path d="M0 600 L0 520 Q400 500 800 530 L800 600 Z" fill="#4caf50" />
+  
+  <!-- Bamboos -->
+  <!-- Stem 1 -->
+  <g fill="url(#bambooGrad1)">
+    <rect x="100" y="0" width="25" height="150" rx="3" />
+    <rect x="100" y="155" width="25" height="180" rx="3" />
+    <rect x="100" y="340" width="25" height="220" rx="3" />
+    <!-- joints -->
+    <line x1="98" y1="152" x2="127" y2="152" stroke="#81c784" stroke-width="4" />
+    <line x1="98" y1="337" x2="127" y2="337" stroke="#81c784" stroke-width="4" />
+  </g>
+  
+  <!-- Stem 2 -->
+  <g fill="url(#bambooGrad2)">
+    <rect x="250" y="0" width="30" height="120" rx="3" />
+    <rect x="250" y="125" width="30" height="190" rx="3" />
+    <rect x="250" y="320" width="30" height="260" rx="3" />
+    <!-- joints -->
+    <line x1="247" y1="122" x2="283" y2="122" stroke="#81c784" stroke-width="4" />
+    <line x1="247" y1="317" x2="283" y2="317" stroke="#81c784" stroke-width="4" />
+  </g>
+
+  <!-- Stem 3 -->
+  <g fill="url(#bambooGrad1)">
+    <rect x="600" y="0" width="22" height="180" rx="3" />
+    <rect x="600" y="185" width="22" height="140" rx="3" />
+    <rect x="600" y="330" width="22" height="240" rx="3" />
+    <!-- joints -->
+    <line x1="598" y1="182" x2="624" y2="182" stroke="#81c784" stroke-width="4" />
+    <line x1="598" y1="327" x2="624" y2="327" stroke="#81c784" stroke-width="4" />
+  </g>
+  
+  <!-- Leaves -->
+  <path d="M125 152 C150 140 180 150 200 130 C170 140 140 140 125 152 Z" fill="#1b5e20" />
+  <path d="M125 152 C140 120 160 110 180 90 C155 110 135 120 125 152 Z" fill="#2e7d32" />
+  
+  <path d="M280 317 C310 300 340 310 360 290 C330 300 300 300 280 317 Z" fill="#1b5e20" />
+  <path d="M250 122 C220 100 200 110 180 90 C205 100 225 110 250 122 Z" fill="#2e7d32" />
+
+  <path d="M600 182 C570 160 550 170 530 150 C555 160 575 170 600 182 Z" fill="#1b5e20" />
+  
+</svg>

@@ -1,0 +1,87 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #eeeeee;
+  --secondary-bg: #f8f9fa;
+  --text-muted: #666666;
+  --text-dim: #888888;
+  --border-color: #eeeeee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --navy-bg: #0a192f; /* 딥 블루 색상 추가 */
+    --card-bg: #1a1a1a;
+    --card-border: #333333;
+    --secondary-bg: #141414;
+    --text-muted: #a0a0a0;
+    --text-dim: #808080;
+    --border-color: #333333;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 56px; /* Fixed Navbar 높이만큼 여백 추가 */
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  letter-spacing: -0.01em;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-social-link {
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer-social-link:hover {
+  color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

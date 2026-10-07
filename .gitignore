@@ -1,0 +1,52 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/.open-next/
+/.wrangler/
+/supabase/.temp/
+
+# production
+/build
+/backups/
+
+# misc
+.DS_Store
+*.pem
+*.key
+*service-account*.json
+*credentials*.json
+blog_indexnow.json
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# User uploads (if stored locally)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Trash folder (internal deleted files)
+.trash/

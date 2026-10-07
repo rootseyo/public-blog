@@ -1,0 +1,263 @@
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+  max-width: 1700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 90;
+}
+
+.sidebarCollapsed {
+  width: 70px;
+  padding: 2rem 0.25rem;
+}
+
+.sidebarHeader {
+  margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes button to the right */
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.sidebarCollapsed .sidebarHeader {
+  justify-content: center;
+  padding: 0;
+}
+
+.collapseButton {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  order: 2; /* Ensure it stays on the right */
+}
+
+.collapseButton:hover {
+  background-color: var(--secondary-bg);
+  color: var(--foreground);
+}
+
+.sidebarTitle {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--foreground);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  flex: 1;
+  order: 1;
+}
+
+.sidebarCollapsed .sidebarTitle {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.sidebarCollapsed .navLink {
+  justify-content: center;
+  padding: 0.75rem;
+  gap: 0;
+}
+
+.linkLabel {
+  transition: opacity 0.2s;
+}
+
+.sidebarCollapsed .linkLabel {
+  display: none;
+}
+
+.navLink:hover {
+  background-color: var(--secondary-bg);
+  color: var(--foreground);
+}
+
+.activeNavLink {
+  background-color: #0070f310;
+  color: #0070f3;
+  font-weight: 700;
+}
+
+.sidebarDivider {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.sidebarCollapsed .sidebarDivider {
+  margin-top: 1rem;
+}
+
+.logoutWrapper {
+  margin-top: auto;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.sidebarCollapsed .logoutWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  min-width: 0;
+}
+
+.exportButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.exportButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--foreground);
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exportButton:hover:not(:disabled) {
+  background-color: var(--secondary-bg);
+  border-color: var(--text-dim);
+}
+
+.exportButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .adminLayout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 1rem 0.5rem 1rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .sidebarHeader {
+    margin-bottom: 1rem;
+    padding: 0;
+    justify-content: center; /* Bring items to center */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Control distance between title and button */
+  }
+
+  .sidebarTitle {
+    flex: none; /* Remove flex-1 to prevent pushing */
+    width: auto;
+  }
+
+  .collapseButton {
+    margin-right: 0;
+  }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .navLink {
+    white-space: nowrap;
+    width: auto;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .linkLabel {
+    display: block !important;
+  }
+
+  .sidebarDivider {
+    display: none;
+  }
+
+  .logoutWrapper {
+    margin-top: 0;
+    padding-top: 0;
+    width: auto;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}

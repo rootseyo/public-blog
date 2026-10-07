@@ -1,0 +1,365 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--background);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: rgba(10, 25, 47, 0.85); /* 딥 네이비 반투명 */
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1); /* 미세한 청록색 테두리 포인트 */
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.logo h1,
+.logo h2,
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  height: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--foreground);
+}
+
+/* Category Dropdown Styles (PC) */
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.dropdownTrigger:hover {
+  color: var(--foreground);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 1px); /* Navbar 하단 테두리 바로 아래 배치 */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.75rem;
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 101;
+}
+
+.navItem {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navItem:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mobileCategories {
+  display: none;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background: var(--secondary-bg);
+  color: var(--foreground);
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--foreground);
+}
+
+.popularSection {
+  display: none;
+}
+
+.menuBanner {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 0.5rem 0 1.25rem; /* Minimal right padding */
+  }
+
+  .mobileMenuBtn {
+    display: block;
+    margin-left: auto; /* Push to the right */
+    margin-right: -0.25rem;
+    z-index: 102; /* Above backdrop and menu */
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+  }
+
+  .backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu {
+    position: fixed;
+    top: 56px;
+    right: 0; /* 오른쪽 정렬 */
+    width: 80%; /* 전체 너비 대신 80% 정도만 차지 */
+    max-width: 300px; /* 너무 넓어지지 않게 제한 */
+    height: calc(100dvh - 56px); /* 화면 높이 전체 차지 */
+    background: var(--background);
+    flex-direction: column;
+    padding: 2rem 1.5rem 3rem;
+    gap: 1.5rem;
+    border-left: 1px solid var(--border-color); /* 왼쪽 테두리 */
+    transform: translateX(100%); /* 오른쪽으로 숨김 */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+  }
+
+  .menu.active {
+    transform: translateX(0); /* 왼쪽으로 밀려 들어옴 */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .link {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: right; /* 오른쪽 정렬 */
+    padding: 0.5rem 0;
+  }
+
+  .navItem {
+    display: none;
+  }
+
+  .mobileCategories {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mobileCategoryTrigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 0.5rem 0;
+    cursor: pointer;
+  }
+
+  .mobileCategoryContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .mobileCategoryContent.expanded {
+    max-height: 500px; /* 넉넉하게 설정 */
+  }
+
+  .mobileCategoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0.5rem 1rem 0;
+    align-items: flex-end; /* 오른쪽 정렬 */
+  }
+
+  .mobileCategoryItem {
+    font-size: 1rem;
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0;
+  }
+
+  .popularSection {
+    display: block;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+  }
+
+  .popularTitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    text-align: right; /* 오른쪽 정렬 */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .popularList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    align-items: flex-end; /* 오른쪽 정렬 */
+  }
+
+  .popularLink {
+    display: flex;
+    flex-direction: row-reverse; /* 랭킹 숫자가 오른쪽으로 가게 */
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--foreground);
+    text-align: right; /* 오른쪽 정렬 */
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    width: 100%;
+  }
+
+  .popularPostTitle {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .popularRank {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0070f3;
+    opacity: 0.8;
+    width: 1.2rem;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .menuBanner {
+    display: block;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menuBannerTitle {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem 0;
+    color: #64ffda;
+  }
+
+  .menuBanner p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .menuBannerLink {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: white;
+    color: #0f172a;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+}

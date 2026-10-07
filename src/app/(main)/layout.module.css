@@ -1,0 +1,21 @@
+.mainContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.adminContainer {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 1.25rem 1rem; /* 40px (2.5rem) -> 20px (1.25rem) */
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

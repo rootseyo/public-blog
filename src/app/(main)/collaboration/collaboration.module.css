@@ -1,0 +1,145 @@
+.container {
+  max-width: 600px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+.successContainer {
+  max-width: 600px;
+  margin: 10rem auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.form {
+  background: #f9f9f9;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #eee;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.agreementWrapper {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  margin-top: 0.35rem;
+  cursor: pointer;
+}
+
+.agreementLabel {
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.error {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.homeButton {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: #0070f3;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.homeButton:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+  .container {
+    margin: 3rem auto;
+  }
+
+  .successContainer {
+    margin: 5rem auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .input, .textarea {
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+}

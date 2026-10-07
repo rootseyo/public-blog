@@ -1,0 +1,751 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0.75rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.postTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0.5rem 0 0.75rem 0;
+  color: var(--foreground);
+}
+
+.postTitleLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.postTitleLink:hover {
+  color: #10b981;
+  text-decoration: underline;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 0.8;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Form Card */
+.formCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  color: var(--foreground);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.textareaWrapper {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.textarea {
+  width: 100%;
+  height: 90px;
+  padding: 0.6rem 0.8rem 1.8rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  color: var(--foreground);
+  font-size: 0.95rem;
+  resize: none;
+  outline: none;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+}
+
+.textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.counterBadge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.counterWarning {
+  color: #f59e0b;
+}
+
+.counterDanger {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.65rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #059669;
+}
+
+.submitButton:disabled {
+  background: var(--border-color);
+  color: var(--text-dim);
+  cursor: not-allowed;
+}
+
+/* Post Cards */
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.postCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.authorMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--foreground);
+}
+
+.timeText {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.ownBadge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  font-size: 0.65rem;
+  padding: 0.05rem 0.25rem;
+  border-radius: 3px;
+  font-weight: 600;
+  margin-left: 0.3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  transition: color 0.2s ease;
+}
+
+.actionBtn:hover {
+  color: var(--foreground);
+}
+
+.deleteBtn:hover {
+  color: #ef4444;
+}
+
+.postContent {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+/* Edit Form inside Card */
+.editForm {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.editSubmitBtn {
+  padding: 0.35rem 0.75rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editCancelBtn {
+  padding: 0.35rem 0.75rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.emptyIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Comments Section */
+.postFooter {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.likeBtn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.likeBtn:hover {
+  color: #3b82f6;
+}
+
+.liked {
+  color: #3b82f6 !important;
+}
+
+.commentToggleBtn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.commentToggleBtn:hover {
+  color: #10b981;
+}
+
+.commentsSection {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  animation: slideDown 0.2s ease-out;
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.commentItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.commentAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.commentAuthor {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--foreground);
+}
+
+.commentTime {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.commentContent {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--foreground);
+  margin-left: 1.5rem;
+  word-break: break-all;
+}
+
+.commentActions {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: 1.5rem;
+  margin-top: 0.1rem;
+}
+
+.commentActionBtn {
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.commentActionBtn:hover {
+  color: var(--foreground);
+}
+
+.commentDeleteBtn:hover {
+  color: #ef4444;
+}
+
+/* 2-depth replies spacing */
+.replyContainer {
+  margin-left: 1.25rem;
+  padding-left: 0.5rem;
+  border-left: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.replyItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+}
+
+.replyIndicator {
+  position: absolute;
+  left: -0.5rem;
+  top: 0;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+}
+
+/* Comment/Reply Forms */
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.replyForm {
+  margin-top: 0.4rem;
+  margin-left: 1.5rem;
+  padding: 0.6rem;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.commentFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+
+.commentInput {
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--foreground);
+  outline: none;
+}
+
+.commentInput:focus {
+  border-color: #10b981;
+}
+
+.commentTextareaWrapper {
+  position: relative;
+}
+
+.commentTextarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.5rem 0.6rem 1.6rem 0.6rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--foreground);
+  resize: none;
+  outline: none;
+  line-height: 1.4;
+}
+
+.commentTextarea:focus {
+  border-color: #10b981;
+}
+
+.commentSubmitBtn {
+  align-self: flex-end;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.commentSubmitBtn:hover {
+  background-color: #059669;
+}
+
+.commentSubmitBtn:disabled {
+  background-color: var(--border-color);
+  color: var(--text-dim);
+  cursor: not-allowed;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .container {
+    padding: 0.5rem 0.4rem;
+  }
+}
+
+/* Tiptap Editor Styling */
+.editorWrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.editorWrapper:focus-within {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.editorToolbar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.45rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.toolbarButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.toolbarButton:hover:not(:disabled) {
+  background: var(--secondary-bg);
+  color: var(--foreground);
+  border-color: var(--border-color);
+}
+
+.toolbarButtonActive {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.toolbarDivider {
+  width: 1px;
+  height: 18px;
+  background-color: var(--border-color);
+  margin: 0 0.25rem;
+}
+
+.editorContainer {
+  position: relative;
+}
+
+.editorContent {
+  /* Keep ordered-list markers comfortably inside the editor border. */
+  padding: 0.8rem 1.2rem;
+  min-height: 140px;
+  max-height: 350px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  background: var(--secondary-bg);
+}
+
+.editorContentPlaceholder {
+  padding: 0.8rem 1.2rem;
+  min-height: 140px;
+  color: var(--text-dim);
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+
+.editorContent :global(.ProseMirror) {
+  outline: none;
+  min-height: 120px;
+  white-space: pre-wrap;
+  tab-size: 4;
+}
+
+.editorContent :global(.ProseMirror) ul,
+.editorContent :global(.ProseMirror) ol {
+  /* The global reset removes browser list indentation. Restore it in the editor. */
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.editorContent :global(.ProseMirror) li {
+  margin-bottom: 0.25rem;
+}
+
+.editorContent :global(.ProseMirror) p:first-child:has(br:only-child)::before {
+  content: "여기에 할 말을 적어보세요... (최대 2000자)";
+  color: var(--text-dim);
+  pointer-events: none;
+  position: absolute;
+  opacity: 0.6;
+}
+
+/* Post Content Formatted Tags */
+.postContent p {
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+.postContent p:last-child {
+  margin-bottom: 0;
+}
+
+.postContent ul,
+.postContent ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.postContent li {
+  margin-bottom: 0.25rem;
+}
+
+.contentLink {
+  color: #10b981 !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.contentLink:hover {
+  color: #059669 !important;
+}
+
+.editorContent :global(.ProseMirror) img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 8px;
+}
+
+.postContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.75rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
